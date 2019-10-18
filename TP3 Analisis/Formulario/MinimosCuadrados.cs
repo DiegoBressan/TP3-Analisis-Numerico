@@ -108,10 +108,22 @@ namespace Formulario
                 DatosParametros datos = new DatosParametros();
 
                 datos.NumPares = numero;
-                datos.x = vecx;
-                datos.y = vecy;
-                
-                //ACA SE HACE EL FORMULARIO CON EL METODO FINAL
+                datos.X = vecx;
+                datos.Y = vecy;
+
+                ResultadoRegresion NuevoResultado = new ResultadoRegresion();
+
+                FormularioPrincipal formularioprincipal = this.Owner as FormularioPrincipal;
+                if (formularioprincipal != null)
+                {
+                    NuevoResultado = formularioprincipal.MinimosCuadrados(datos);
+
+                    string variable = "";
+
+                    variable = Convert.ToString("EFECTIVIDAD: " + NuevoResultado.Efectividad + " " + "GRADO FINAL: " + NuevoResultado.GradoFinal + " " + "ORDENADA ORIGEN: " + NuevoResultado.OrdenadaOrigen + " " + "PENDIENTE: " + NuevoResultado.Pendiente + " " + "RESULTADO: " + NuevoResultado.Resul + " ");
+
+                    MessageBox.Show(variable);
+                }
             }
         }
     }

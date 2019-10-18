@@ -28,5 +28,11 @@ namespace Formulario
             nuevo.Owner = this;
             nuevo.ShowDialog();
         }
+
+        public ResultadoRegresion MinimosCuadrados(DatosParametros Datos)
+        {
+            return Principal.MinimosCuadrados(Datos);
+        }
+        //LAGRANJE
     }
 }

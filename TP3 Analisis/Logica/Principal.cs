@@ -8,6 +8,8 @@ namespace Logica
 {
     public class Principal
     {
+        //MINIMOS CUADRADOS
+
         public ResultadosCalcular Calcular(DatosParametros Datos)
         {
             ResultadosCalcular resultados = new ResultadosCalcular();
@@ -44,6 +46,6 @@ namespace Logica
             return Resultados;
         }
 
-
+        //LAGRANJE
     }
 }
