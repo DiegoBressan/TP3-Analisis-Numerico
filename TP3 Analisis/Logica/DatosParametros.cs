@@ -8,8 +8,8 @@ namespace Logica
 {
     public class DatosParametros
     {
-        public double[] x { get; set; }
-        public double[] y { get; set; }
+        public double[] X { get; set; }
+        public double[] Y { get; set; }
         public int NumPares { get; set; }
         public int Grado { get; set; }
         public int Error { get; set; }
