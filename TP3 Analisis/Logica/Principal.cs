@@ -24,8 +24,8 @@ namespace Logica
                 resultados.SumaXCuadrados = resultados.SumaXCuadrados + (Math.Pow(Datos.X[i], 2));
             }
 
-            resultados.PromedioX = resultados.PromedioX / Datos.NumPares;
-            resultados.PromedioY = resultados.PromedioY / Datos.NumPares;
+            resultados.PromedioX = resultados.SumaX / Datos.NumPares;
+            resultados.PromedioY = resultados.SumaY / Datos.NumPares;
 
             return resultados;
         }

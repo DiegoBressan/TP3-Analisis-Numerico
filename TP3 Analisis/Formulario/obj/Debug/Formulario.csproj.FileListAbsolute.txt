@@ -12,3 +12,17 @@ C:\Users\David\Desktop\Tp3-Analisis Numerico\TP3 Analisis\Formulario\bin\Debug\L
 C:\Users\David\Desktop\Tp3-Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.csproj.CopyComplete
 C:\Users\David\Desktop\Tp3-Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.exe
 C:\Users\David\Desktop\Tp3-Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.pdb
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\bin\Debug\Formulario.exe.config
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\bin\Debug\Formulario.exe
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\bin\Debug\Formulario.pdb
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\bin\Debug\Logica.dll
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\bin\Debug\Logica.pdb
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.csprojAssemblyReference.cache
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.Form1.resources
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.MinimosCuadrados.resources
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.Properties.Resources.resources
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.csproj.GenerateResource.cache
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.csproj.CoreCompileInputs.cache
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.csproj.CopyComplete
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.exe
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.pdb

@@ -4,3 +4,9 @@ C:\Users\David\Desktop\Tp3-Analisis Numerico\TP3 Analisis\Logica\obj\Debug\Logic
 C:\Users\David\Desktop\Tp3-Analisis Numerico\TP3 Analisis\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
 C:\Users\David\Desktop\Tp3-Analisis Numerico\TP3 Analisis\Logica\obj\Debug\Logica.dll
 C:\Users\David\Desktop\Tp3-Analisis Numerico\TP3 Analisis\Logica\obj\Debug\Logica.pdb
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Logica\bin\Debug\Logica.dll
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Logica\bin\Debug\Logica.pdb
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Logica\obj\Debug\Logica.csprojAssemblyReference.cache
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Logica\obj\Debug\Logica.dll
+C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Logica\obj\Debug\Logica.pdb
