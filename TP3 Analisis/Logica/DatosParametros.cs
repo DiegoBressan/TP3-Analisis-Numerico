@@ -12,6 +12,5 @@ namespace Logica
         public double[] Y { get; set; }
         public int NumPares { get; set; }
         public int Grado { get; set; }
-        public int Error { get; set; }
     }
 }
