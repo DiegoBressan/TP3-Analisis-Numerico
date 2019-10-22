@@ -125,6 +125,7 @@ namespace Logica
 
             return Resultados;
         }
+        
         //MINIMOS CUADRADOS POLINOMIO
         public ResultadoRegresion MinimosCuadradosPolinomio(DatosParametros Datos)
         {
@@ -152,5 +153,35 @@ namespace Logica
         }
 
         //LAGRANJE
+        public ResultadoLagranje InterpolacionPolinomioLagranje(DatosParametros Datos, double ValorX)
+        {
+            ResultadoLagranje Resultado = new ResultadoLagranje();
+            double[] Nominadores = new double[Datos.NumPares - 1];
+            double[] Denominador = new double[Datos.NumPares - 1];
+            double[] ResultadosP = new double[Datos.NumPares - 1];
+            int cont = 0;
+
+            for (int z = 0; z < Datos.NumPares; z++)
+            {
+                Nominadores[z] = 1;
+                Denominador[z] = 1;
+
+                for (int i = 0; i < Datos.NumPares; i++)
+                {
+                    if (i != cont)
+                    {
+                        Nominadores[i] = Nominadores[i] * (ValorX - Datos.X[i]);
+                        Denominador[i] = Denominador[i] * (Datos.X[cont] - Datos.X[i]);
+                    }
+
+                    cont += 1;
+                }
+
+                ResultadosP[z] = Datos.Y[z] * (Nominadores[z] / Denominador[z]);
+                Resultado.Interpolacion = ResultadosP[z] + Resultado.Interpolacion;
+            }
+
+            return Resultado;
+        }
     }
 }
