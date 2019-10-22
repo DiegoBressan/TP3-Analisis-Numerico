@@ -131,7 +131,7 @@ namespace Logica
         {
             ResultadoRegresion resultado = new ResultadoRegresion();
             ResultadosCalcular Calculo = Calcular(Datos);
-            double[,] Matriz = new double[Datos.Grado,Datos.Grado];
+            double[,] Matriz = new double[Datos.Grado,Datos.Grado + 1];
 
             for (int i = 0; i < Datos.NumPares -1; i++)
             {
@@ -139,9 +139,9 @@ namespace Logica
                 {
                     for (int t = 0; t < Datos.Grado; t++)
                     {
-                        Matriz[z, t] = Math.Pow(Datos.X[i], t + z);
+                        Matriz[z, t] += Math.Pow(Datos.X[i], t + z);
                     }
-                    Matriz[z, Datos.Grado + 1] = Datos.Y[i] * Math.Pow(Datos.X[i], z);
+                    Matriz[z, Datos.Grado + 1] += Datos.Y[i] * Math.Pow(Datos.X[i], z);
                 }
             }
 
@@ -178,7 +178,7 @@ namespace Logica
                 }
 
                 ResultadosP[z] = Datos.Y[z] * (Nominadores[z] / Denominador[z]);
-                Resultado.Interpolacion = ResultadosP[z] + Resultado.Interpolacion;
+                Resultado.Interpolacion += ResultadosP[z];
             }
 
             return Resultado;
