@@ -11,6 +11,7 @@ namespace Formulario
     {
         //MINIMOS CUADRADOS
         ResultadoRegresion MinimosCuadrados(DatosParametros Datos);
-
+        //MINIMOS CUADRADOS POLINOMIO
+        ResultadoRegresion MinimosCuadradosPolinomio(DatosParametros Datos);
     }
 }

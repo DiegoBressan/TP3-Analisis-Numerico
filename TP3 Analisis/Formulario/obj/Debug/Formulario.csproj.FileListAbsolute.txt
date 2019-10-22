@@ -26,3 +26,4 @@ C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\F
 C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.csproj.CopyComplete
 C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.exe
 C:\Users\diego\Desktop\TP3 Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.pdb
+C:\Users\David\Desktop\Tp3-Analisis Numerico\TP3 Analisis\Formulario\obj\Debug\Formulario.MinimosCuadradosPolinomio.resources

@@ -33,6 +33,17 @@ namespace Formulario
         {
             return Principal.MinimosCuadrados(Datos);
         }
+        //MINIMOS CUADRADOS POLINOMIO
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MinimosCuadradosPolinomio nuevo = new MinimosCuadradosPolinomio(new DatosParametros());
+            nuevo.Owner = this;
+            nuevo.ShowDialog();
+        }
+        public ResultadoRegresion MinimosCuadradosPolinomio(DatosParametros Datos)
+        {
+            return Principal.MinimosCuadradosPolinomio(Datos);
+        }
         //LAGRANJE
     }
 }

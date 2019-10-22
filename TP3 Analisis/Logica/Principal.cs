@@ -125,7 +125,7 @@ namespace Logica
 
             return Resultados;
         }
-
+        //MINIMOS CUADRADOS POLINOMIO
         public ResultadoRegresion MinimosCuadradosPolinomio(DatosParametros Datos)
         {
             ResultadoRegresion resultado = new ResultadoRegresion();
