@@ -28,7 +28,7 @@ namespace Logica
             return resultados;
         }
 
-        private double CalcularR(DatosParametros datos, ResultadosCalcular calculo, ResultadoRegresion regresion)
+        private double CalcularR(DatosParametros datos, ResultadosCalcular calculo, ResultadoRegresion regresion, double[] lista)
         {
             double st = 0;
 
@@ -41,10 +41,26 @@ namespace Logica
                 st = st + Math.Pow(aux, 2);
             }
 
+            //MINIMOS CUADRADOS
+            /*  
             for (int i = 0; i < datos.NumPares; i++)
             {
                 double aux2 = (regresion.Pendiente + datos.X[i]) - regresion.OrdenadaOrigen - datos.Y[i];
                 sr = sr + Math.Pow(aux2, 2);
+            }
+            */
+
+            double acu = 0;
+            for (int i = 0; i < datos.NumPares; i++)
+            {
+                int potencia = 0;
+                foreach (var item in lista)
+                {
+                    acu = acu - item * Math.Pow(datos.X[i], potencia);
+                    potencia++;
+                }
+                sr = sr + Math.Pow((datos.Y[i] + acu), 2);
+                acu = 0;
             }
 
             r = Math.Sqrt((st - sr) / st) * 100;
@@ -54,27 +70,27 @@ namespace Logica
         }
 
         //GAUSS-JORDAN
-        public double[] ObtenerGaussJordan(double[,] matrizcargada, int incognita)
+        public double[] ObtenerGaussJordan(double[,] matrizcargada, int grado)
         {
-            double[] Resultado = new double[incognita];
+            double[] Resultado = new double[grado];
             double coeficiente = 0;
 
-            for (int x = 0; x <= incognita - 1; x++)
+            for (int x = 0; x <= grado - 1; x++)
             {
                 coeficiente = matrizcargada[x, x];
 
-                for (int y = 0; y <= incognita; y++)
+                for (int y = 0; y <= grado; y++)
                 {
                     matrizcargada[x, y] = matrizcargada[x, y] / coeficiente;
                 }
 
-                for (int z = 0; z <= incognita - 1; z++)
+                for (int z = 0; z <= grado - 1; z++)
                 {
                     if (x != z)
                     {
                         coeficiente = matrizcargada[z, x];
 
-                        for (int t = 0; t <= incognita; t++)
+                        for (int t = 0; t <= grado; t++)
                         {
                             matrizcargada[z, t] = matrizcargada[z, t] - (coeficiente * matrizcargada[x, t]);
                         }
@@ -82,9 +98,9 @@ namespace Logica
                 }
             }
 
-            for (int i = 0; i < incognita; i++)
+            for (int i = 0; i < grado; i++)
             {
-                Resultado[i] = matrizcargada[i, incognita];
+                Resultado[i] = matrizcargada[i, grado];
             }
 
             return Resultado;
@@ -103,7 +119,9 @@ namespace Logica
             Resultados.Pendiente = Nominador / Denominador;
             Resultados.OrdenadaOrigen = Calculo.PromedioY - (Resultados.Pendiente * Calculo.PromedioX);
 
-            Resultados.Efectividad = CalcularR(Datos, Calculo, Resultados);
+            double[] lista = new double[5];
+
+            Resultados.Efectividad = CalcularR(Datos, Calculo, Resultados, lista);
 
             return Resultados;
         }
@@ -112,8 +130,23 @@ namespace Logica
         {
             ResultadoRegresion resultado = new ResultadoRegresion();
             ResultadosCalcular Calculo = Calcular(Datos);
+            double[,] Matriz = new double[Datos.Grado,Datos.Grado];
 
+            for (int i = 0; i < Datos.NumPares -1; i++)
+            {
+                for (int z = 0; z < Datos.Grado; z++)
+                {
+                    for (int t = 0; t < Datos.Grado; t++)
+                    {
+                        Matriz[z, t] = Math.Pow(Datos.X[i], t + z);
+                    }
+                    Matriz[z, Datos.Grado + 1] = Datos.Y[i] * Math.Pow(Datos.X[i], z);
+                }
+            }
 
+            double[] Resultados = ObtenerGaussJordan(Matriz, Datos.Grado + 1);
+
+            double r = CalcularR(Datos, Calculo, resultado, Resultados);
 
             return resultado;
         }
