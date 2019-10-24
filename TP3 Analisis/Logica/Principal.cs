@@ -156,31 +156,23 @@ namespace Logica
         public ResultadoLagranje InterpolacionPolinomioLagranje(DatosParametros Datos, double ValorX)
         {
             ResultadoLagranje Resultado = new ResultadoLagranje();
-            double[] Nominadores = new double[Datos.NumPares - 1];
-            double[] Denominador = new double[Datos.NumPares - 1];
-            double[] ResultadosP = new double[Datos.NumPares - 1];
-            int cont = 0;
+            double[] ResultadosP = new double[Datos.NumPares];
 
             for (int z = 0; z < Datos.NumPares; z++)
             {
-                Nominadores[z] = 1;
-                Denominador[z] = 1;
+                double Nominadores = 1;
+                double Denominador = 1;
 
                 for (int i = 0; i < Datos.NumPares; i++)
                 {
-                    if (i != cont)
+                    if (i != z)
                     {
-                        Nominadores[i] = Nominadores[i] * (ValorX - Datos.X[i]);
-                        Denominador[i] = Denominador[i] * (Datos.X[cont] - Datos.X[i]);
+                        Nominadores = Nominadores * (ValorX - Datos.X[i]);
+                        Denominador = Denominador * (Datos.X[z] - Datos.X[i]);
                     }
-
-                    cont += 1;
                 }
-
-                ResultadosP[z] = Datos.Y[z] * (Nominadores[z] / Denominador[z]);
-                Resultado.Interpolacion += ResultadosP[z];
+                Resultado.Interpolacion += Datos.Y[z] * (Nominadores / Denominador);
             }
-
             return Resultado;
         }
     }
