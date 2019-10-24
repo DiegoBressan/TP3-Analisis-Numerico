@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterpolacionLagranje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterpolacionLagranje.Designer.cs">
+      <DependentUpon>InterpolacionLagranje.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioPrincipal.cs" />
     <Compile Include="MinimosCuadrados.cs">
       <SubType>Form</SubType>
@@ -69,6 +75,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterpolacionLagranje.resx">
+      <DependentUpon>InterpolacionLagranje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MinimosCuadrados.resx">
       <DependentUpon>MinimosCuadrados.cs</DependentUpon>

@@ -44,6 +44,17 @@ namespace Formulario
         {
             return Principal.MinimosCuadradosPolinomio(Datos);
         }
+
         //LAGRANJE
+        private void button2_Click(object sender, EventArgs e)
+        {
+            InterpolacionLagranje nuevo = new InterpolacionLagranje(new DatosParametros());
+            nuevo.Owner = this;
+            nuevo.ShowDialog();
+        }
+        public ResultadoLagranje InterpolacionPolinomioLagranje(DatosParametros Datos, double ValorX)
+        {
+            return Principal.InterpolacionPolinomioLagranje(Datos, ValorX);
+        }
     }
 }

@@ -13,5 +13,7 @@ namespace Formulario
         ResultadoRegresion MinimosCuadrados(DatosParametros Datos);
         //MINIMOS CUADRADOS POLINOMIO
         ResultadoRegresion MinimosCuadradosPolinomio(DatosParametros Datos);
+        //INTERPOLACION LAGRANJE
+        ResultadoLagranje InterpolacionPolinomioLagranje(DatosParametros Datos, double ValorX);
     }
 }
