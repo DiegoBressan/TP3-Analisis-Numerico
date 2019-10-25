@@ -42,14 +42,14 @@ namespace Logica
             }
 
             //MINIMOS CUADRADOS
-            /*  
+            
             for (int i = 0; i < datos.NumPares; i++)
             {
                 double aux2 = (regresion.Pendiente + datos.X[i]) - regresion.OrdenadaOrigen - datos.Y[i];
                 sr = sr + Math.Pow(aux2, 2);
             }
-            */
 
+            /*
             double acu = 0;
             for (int i = 0; i < datos.NumPares; i++)
             {
@@ -62,8 +62,9 @@ namespace Logica
                 sr = sr + Math.Pow((datos.Y[i] + acu), 2);
                 acu = 0;
             }
+            */
 
-            r = Math.Sqrt((st - sr) / st) * 100;
+            r = Math.Sqrt(Math.Abs(st - sr) / st) * 100;
 
 
             return r;
@@ -84,17 +85,20 @@ namespace Logica
                     matrizcargada[x, y] = matrizcargada[x, y] / coeficiente;
                 }
 
-                for (int z = 0; z <= grado - 1; z++)
+                for (int z = 0; z <= grado; z++)
                 {
-                    if (x != z)
-                    {
-                        coeficiente = matrizcargada[z, x];
+                   if (z < grado)
+                   {
+                        coeficiente = matrizcargada[x, z];
 
-                        for (int t = 0; t <= grado; t++)
+                        for (int t = 0; t <= grado -1 ; t++)
                         {
-                            matrizcargada[z, t] = matrizcargada[z, t] - (coeficiente * matrizcargada[x, t]);
+                            if (t != x)
+                            {
+                                matrizcargada[t, z] = matrizcargada[t, z] - (coeficiente * matrizcargada[t, x]);
+                            }
                         }
-                    }
+                   }
                 }
             }
 
@@ -125,15 +129,15 @@ namespace Logica
 
             return Resultados;
         }
-        
+
         //MINIMOS CUADRADOS POLINOMIO
         public ResultadoRegresion MinimosCuadradosPolinomio(DatosParametros Datos)
         {
             ResultadoRegresion resultado = new ResultadoRegresion();
             ResultadosCalcular Calculo = Calcular(Datos);
-            double[,] Matriz = new double[Datos.Grado,Datos.Grado + 1];
+            double[,] Matriz = new double[Datos.Grado, Datos.NumPares];
 
-            for (int i = 0; i < Datos.NumPares -1; i++)
+            for (int i = 0; i < Datos.NumPares - 1; i++)
             {
                 for (int z = 0; z < Datos.Grado; z++)
                 {
@@ -141,13 +145,13 @@ namespace Logica
                     {
                         Matriz[z, t] += Math.Pow(Datos.X[i], t + z);
                     }
-                    Matriz[z, Datos.Grado + 1] += Datos.Y[i] * Math.Pow(Datos.X[i], z);
+                    Matriz[z, Datos.NumPares-1] += Datos.Y[i] * Math.Pow(Datos.X[i], z);
                 }
             }
 
-            double[] Resultados = ObtenerGaussJordan(Matriz, Datos.Grado + 1);
+            double[] Resultados = ObtenerGaussJordan(Matriz, Datos.Grado);
 
-            double r = CalcularR(Datos, Calculo, resultado, Resultados);
+            resultado.Efectividad = CalcularR(Datos, Calculo, resultado, Resultados);
 
             return resultado;
         }
