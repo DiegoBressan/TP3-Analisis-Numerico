@@ -49,6 +49,8 @@ namespace Logica
                 sr = sr + Math.Pow(aux2, 2);
             }
 
+            //MINIMOS CUADRADOS POLINIMIO
+
             /*
             double acu = 0;
             for (int i = 0; i < datos.NumPares; i++)
@@ -175,6 +177,7 @@ namespace Logica
                         Denominador = Denominador * (Datos.X[z] - Datos.X[i]);
                     }
                 }
+
                 Resultado.Interpolacion += Datos.Y[z] * (Nominadores / Denominador);
             }
             return Resultado;
