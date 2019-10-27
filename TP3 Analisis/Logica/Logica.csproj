@@ -46,6 +46,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultadoLagranje.cs" />
     <Compile Include="ResultadoRegresion.cs" />
+    <Compile Include="ResultadoRegresionPolinomio.cs" />
     <Compile Include="ResultadosCalcular.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

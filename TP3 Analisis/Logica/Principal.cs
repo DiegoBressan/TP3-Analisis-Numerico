@@ -133,9 +133,10 @@ namespace Logica
         }
 
         //MINIMOS CUADRADOS POLINOMIO
-        public ResultadoRegresion MinimosCuadradosPolinomio(DatosParametros Datos)
+        public ResultadoRegresionPolinomio MinimosCuadradosPolinomio(DatosParametros Datos)
         {
-            ResultadoRegresion resultado = new ResultadoRegresion();
+            ResultadoRegresionPolinomio Resultado = new ResultadoRegresionPolinomio();
+            ResultadoRegresion resulta = new ResultadoRegresion();
             ResultadosCalcular Calculo = Calcular(Datos);
             double[,] Matriz = new double[Datos.Grado, Datos.NumPares];
 
@@ -150,12 +151,11 @@ namespace Logica
                     Matriz[z, Datos.NumPares-1] += Datos.Y[i] * Math.Pow(Datos.X[i], z);
                 }
             }
+            Resultado.ResultadosX = ObtenerGaussJordan(Matriz, Datos.Grado);
 
-            double[] Resultados = ObtenerGaussJordan(Matriz, Datos.Grado);
+            Resultado.Efectividad = CalcularR(Datos, Calculo, resulta, Resultado.ResultadosX);
 
-            resultado.Efectividad = CalcularR(Datos, Calculo, resultado, Resultados);
-
-            return resultado;
+            return Resultado;
         }
 
         //LAGRANJE

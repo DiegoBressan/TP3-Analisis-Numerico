@@ -110,16 +110,32 @@ namespace Formulario
                 datos.Y = vecy;
                 datos.Grado = numero - 1;
 
-                ResultadoRegresion NuevoResultado = new ResultadoRegresion();
+                ResultadoRegresionPolinomio NuevoResultado = new ResultadoRegresionPolinomio();
 
                 FormularioPrincipal formularioprincipal = this.Owner as FormularioPrincipal;
                 if (formularioprincipal != null)
                 {
                     NuevoResultado = formularioprincipal.MinimosCuadradosPolinomio(datos);
 
-                    string variable = "";
-
-                    variable = Convert.ToString("EFECTIVIDAD: " + NuevoResultado.Efectividad + " " + "GRADO FINAL: " + NuevoResultado.GradoFinal + " " + "ORDENADA ORIGEN: " + NuevoResultado.OrdenadaOrigen + " " + "PENDIENTE: " + NuevoResultado.Pendiente + " " + "RESULTADO: " + NuevoResultado.Resul + " ");
+                    string variable = Convert.ToString("EFECTIVIDAD: " + NuevoResultado.Efectividad + "   ");
+                    for (int i = 0; i < datos.NumPares; i++)
+                    {
+                        if (i == 0)
+                        {
+                            variable = variable + Convert.ToString(NuevoResultado.ResultadosX[i]);
+                        }
+                        else
+                        {
+                            if (NuevoResultado.ResultadosX[i] >= 0)
+                            {
+                                variable = variable + Convert.ToString(" + " + NuevoResultado.ResultadosX[i] + "X^" + i);
+                            }
+                            else
+                            {
+                                variable = variable + Convert.ToString(" - " + NuevoResultado.ResultadosX[i]);
+                            }
+                        }
+                    }
 
                     MessageBox.Show(variable);
                 }
