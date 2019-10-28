@@ -42,16 +42,16 @@ namespace Logica
             }
 
             //MINIMOS CUADRADOS
-            
+            /*
             for (int i = 0; i < datos.NumPares; i++)
             {
-                double aux2 = (regresion.Pendiente + datos.X[i]) - regresion.OrdenadaOrigen - datos.Y[i];
+                double aux2 = (regresion.OrdenadaOrigen + datos.X[i]) - regresion.Pendiente - datos.Y[i];
                 sr = sr + Math.Pow(aux2, 2);
-            }
+            }*/
 
             //MINIMOS CUADRADOS POLINIMIO
 
-            /*
+            
             double acu = 0;
             for (int i = 0; i < datos.NumPares; i++)
             {
@@ -64,7 +64,7 @@ namespace Logica
                 sr = sr + Math.Pow((datos.Y[i] + acu), 2);
                 acu = 0;
             }
-            */
+            
 
             r = Math.Sqrt(Math.Abs(st - sr) / st) * 100;
 

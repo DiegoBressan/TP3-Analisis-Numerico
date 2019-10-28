@@ -116,23 +116,23 @@ namespace Formulario
                 if (formularioprincipal != null)
                 {
                     NuevoResultado = formularioprincipal.MinimosCuadradosPolinomio(datos);
-
-                    string variable = Convert.ToString("EFECTIVIDAD: " + NuevoResultado.Efectividad + "   ");
-                    for (int i = 0; i < datos.NumPares; i++)
+                     
+                    string variable = Convert.ToString("EFECTIVIDAD: " + Math.Round(NuevoResultado.Efectividad, 4) + " Funcion: ");
+                    for (int i = 0; i < datos.NumPares - 1; i++)
                     {
                         if (i == 0)
                         {
-                            variable = variable + Convert.ToString(NuevoResultado.ResultadosX[i]);
+                            variable = variable + Convert.ToString(Math.Round(NuevoResultado.ResultadosX[i], 4));
                         }
                         else
                         {
                             if (NuevoResultado.ResultadosX[i] >= 0)
                             {
-                                variable = variable + Convert.ToString(" + " + NuevoResultado.ResultadosX[i] + "X^" + i);
+                                variable = variable + Convert.ToString(" + " + Math.Round(NuevoResultado.ResultadosX[i], 4) + "X^" + i);
                             }
                             else
                             {
-                                variable = variable + Convert.ToString(" - " + NuevoResultado.ResultadosX[i]);
+                                variable = variable + Convert.ToString(" - " + Math.Round(NuevoResultado.ResultadosX[i], 4));
                             }
                         }
                     }

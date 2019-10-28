@@ -120,7 +120,7 @@ namespace Formulario
 
                     string variable = "";
 
-                    variable = Convert.ToString("EFECTIVIDAD: " + NuevoResultado.Efectividad + " " + "GRADO FINAL: " + NuevoResultado.GradoFinal + " " + "ORDENADA ORIGEN: " + NuevoResultado.OrdenadaOrigen + " " + "PENDIENTE: " + NuevoResultado.Pendiente + " " + "RESULTADO: " + NuevoResultado.Resul + " ");
+                    variable = Convert.ToString("EFECTIVIDAD: " + NuevoResultado.Efectividad + "     ORDENADA ORIGEN: " + NuevoResultado.OrdenadaOrigen + "     PENDIENTE: " + NuevoResultado.Pendiente);
 
                     MessageBox.Show(variable);
                 }

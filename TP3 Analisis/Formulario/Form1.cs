@@ -40,7 +40,7 @@ namespace Formulario
             nuevo.Owner = this;
             nuevo.ShowDialog();
         }
-        public ResultadoRegresion MinimosCuadradosPolinomio(DatosParametros Datos)
+        public ResultadoRegresionPolinomio MinimosCuadradosPolinomio(DatosParametros Datos)
         {
             return Principal.MinimosCuadradosPolinomio(Datos);
         }
