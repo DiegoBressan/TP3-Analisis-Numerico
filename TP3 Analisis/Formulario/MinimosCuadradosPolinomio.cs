@@ -108,7 +108,7 @@ namespace Formulario
                 datos.NumPares = numero;
                 datos.X = vecx;
                 datos.Y = vecy;
-                datos.Grado = numero - 1;
+                datos.Grado = Convert.ToInt32(this.textBox2.Text);
 
                 ResultadoRegresionPolinomio NuevoResultado = new ResultadoRegresionPolinomio();
 
@@ -118,7 +118,7 @@ namespace Formulario
                     NuevoResultado = formularioprincipal.MinimosCuadradosPolinomio(datos);
                      
                     string variable = Convert.ToString("EFECTIVIDAD: " + Math.Round(NuevoResultado.Efectividad, 4) + " Funcion: ");
-                    for (int i = 0; i < datos.NumPares - 1; i++)
+                    for (int i = 0; i < datos.Grado + 1; i++)
                     {
                         if (i == 0)
                         {
@@ -132,7 +132,7 @@ namespace Formulario
                             }
                             else
                             {
-                                variable = variable + Convert.ToString(" - " + Math.Round(NuevoResultado.ResultadosX[i], 4));
+                                variable = variable + Convert.ToString(" - " + Math.Round(Math.Abs(NuevoResultado.ResultadosX[i]), 4) + "X^" + i);
                             }
                         }
                     }
