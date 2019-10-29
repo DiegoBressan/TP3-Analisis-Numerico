@@ -45,29 +45,26 @@ namespace Logica
             /*
             for (int i = 0; i < datos.NumPares; i++)
             {
-                double aux2 = (regresion.OrdenadaOrigen + datos.X[i]) - regresion.Pendiente - datos.Y[i];
+                double aux2 = (regresion.Pendiente * datos.X[i]) + regresion.OrdenadaOrigen - datos.Y[i];
                 sr = sr + Math.Pow(aux2, 2);
             }*/
 
             //MINIMOS CUADRADOS POLINIMIO
-
             
             double acu = 0;
             for (int i = 0; i < datos.NumPares; i++)
             {
                 int potencia = 0;
-                foreach (var item in lista)
+                for (int z = 0; z < datos.Grado; z++)
                 {
-                    acu = acu - item * Math.Pow(datos.X[i], potencia);
-                    potencia++;
+                    acu = acu + (lista[z] * Math.Pow(datos.X[i], z));
+                    potencia+= 1;
                 }
-                sr = sr + Math.Pow((datos.Y[i] + acu), 2);
+
+                sr = sr + Math.Pow((acu - datos.Y[i]), 2);
                 acu = 0;
             }
-            
-
             r = Math.Sqrt(Math.Abs(st - sr) / st) * 100;
-
 
             return r;
         }
